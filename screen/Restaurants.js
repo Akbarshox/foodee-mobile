@@ -29,7 +29,7 @@ function Restaurants({navigation}) {
                                  <Image source={rest} style={styles.img} />
                                  <Text style={styles.name}>{item.name}</Text>
                                  <View style={styles.icon}>
-                                    <Image source={price} style={styles.price}/>
+                                    <Image source={price} style={styles.price} />
                                     <Text style={styles.minPrice}>Минимальный заказ: {item.minPrice}</Text>
                                  </View>
                                  <Text style={styles.title}><Image source={dot} style={{width: 32, height: 32}} /> {item.title}</Text>

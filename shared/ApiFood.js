@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import InsideRestaurant from "../screen/InsideRestaurant";
+import AnimatedNav from "../screen/AnimatedNav";
 
 export default function ApiFood({navigation}) {
    const [data, setData] = useState([]);
@@ -14,5 +14,5 @@ export default function ApiFood({navigation}) {
    useEffect(() => {
       fetchUrl();
    }, []);
-   return <InsideRestaurant food={data} />
+   return <AnimatedNav navigation={navigation} food={data} />
 }

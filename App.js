@@ -9,6 +9,7 @@ const store = createStore(reducers);
 
 const getFonts = () => Font.loadAsync({
    'mukta': require('./assets/fonts/Mukta-Bold.ttf'),
+   'roboto': require('./assets/fonts/RobotoSlab-VariableFont_wght.ttf')
 });
 
 export default function App() {

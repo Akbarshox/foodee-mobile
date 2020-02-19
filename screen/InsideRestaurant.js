@@ -1,36 +1,82 @@
 import React from 'react';
-import {View, Text, FlatList, Image, StyleSheet} from 'react-native';
+import {View, Text, FlatList, Image, StyleSheet, ScrollView, YellowBox, ActivityIndicator} from 'react-native';
 import burger from '../assets/burger.jpeg';
+import {GlobalStyles} from "../style/GlobalStyles";
 
-export default function InsideRestaurant({food}) {
-   return (
-       <View>
-          <FlatList
-              data={food}
-              keyExtractor={(item, index) => String(index)}
-              renderItem={({item}) => (
-                  <View style={styles.card}>
-                     <Image source={burger} style={styles.img}/>
-                     <Text style={styles.name}>{item.name}</Text>
-                     <Text style={styles.price}>{item.price}</Text>
-                  </View>
-              )}
+export default function InsideRestaurant({food, navigation}) {
+   YellowBox.ignoreWarnings([
+      'VirtualizedLists should never be nested', // TODO: Remove when fixed
+   ]);
+   if(!food.length){
+      return(
+          <ActivityIndicator
+              size='large'
+              style={GlobalStyles.loader}
+              color="#fcc300"
           />
-       </View>
-   )
-}
-const styles = StyleSheet.create({
-   card: {
-      borderRadius: 10,
-      elevation: 3,
-      backgroundColor: '#fff',
-      shadowColor: '#333',
-      shadowOpacity: 0.8,
-      shadowRadius: 2,
-      marginHorizontal: 17,
-      marginVertical: 7,
-   },
-   img: {
-      width: '100%',
+      )
+   }else {
+      return (
+          <View>
+             <ScrollView>
+                <FlatList
+                    data={food}
+                    keyExtractor={(item, index) => String(index)}
+                    horizontal={false}
+                    contentContainerStyle={GlobalStyles.list}
+                    numColumn={2}
+                    renderItem={({item}) => (
+                        <View style={GlobalStyles.card}>
+                           <Image source={burger} style={GlobalStyles.img}/>
+                           <Text style={GlobalStyles.name}>{item.name}</Text>
+                           <Text style={GlobalStyles.price}>{item.price} UZS</Text>
+                        </View>
+                    )}
+                />
+                <FlatList
+                    data={food}
+                    keyExtractor={(item, index) => String(index)}
+                    horizontal={false}
+                    contentContainerStyle={GlobalStyles.list}
+                    numColumn={2}
+                    renderItem={({item}) => (
+                        <View style={GlobalStyles.card}>
+                           <Image source={burger} style={GlobalStyles.img}/>
+                           <Text style={GlobalStyles.name}>{item.name}</Text>
+                           <Text style={GlobalStyles.price}>{item.price} UZS</Text>
+                        </View>
+                    )}
+                />
+                <FlatList
+                    data={food}
+                    keyExtractor={(item, index) => String(index)}
+                    horizontal={false}
+                    contentContainerStyle={GlobalStyles.list}
+                    numColumn={2}
+                    renderItem={({item}) => (
+                        <View style={GlobalStyles.card}>
+                           <Image source={burger} style={GlobalStyles.img}/>
+                           <Text style={GlobalStyles.name}>{item.name}</Text>
+                           <Text style={GlobalStyles.price}>{item.price} UZS</Text>
+                        </View>
+                    )}
+                />
+                <FlatList
+                    data={food}
+                    keyExtractor={(item, index) => String(index)}
+                    horizontal={false}
+                    contentContainerStyle={GlobalStyles.list}
+                    numColumn={2}
+                    renderItem={({item}) => (
+                        <View style={GlobalStyles.card}>
+                           <Image source={burger} style={GlobalStyles.img}/>
+                           <Text style={GlobalStyles.name}>{item.name}</Text>
+                           <Text style={GlobalStyles.price}>{item.price} UZS</Text>
+                        </View>
+                    )}
+                />
+             </ScrollView>
+          </View>
+      )
    }
-});
+}

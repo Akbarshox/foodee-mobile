@@ -17,6 +17,8 @@ const screens = {
       screen: ApiFood,
       navigationOptions: ({navigation}) => ({
          title: navigation.getParam('name'),
+         headerStyle: {backgroundColor: '#fcc300'},
+         headerShown: false,
       }),
    }
 };
