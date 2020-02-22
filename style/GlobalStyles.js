@@ -43,10 +43,10 @@ export const GlobalStyles = StyleSheet.create({
    },
    title: {
       position: 'absolute',
-      marginHorizontal: 55,
-      marginVertical: 25,
+      marginHorizontal: 30,
+      marginVertical: 15,
       borderRadius: 15,
-      elevation: 2,
+      elevation: 5,
       backgroundColor: '#fff',
       shadowColor: '#333',
       shadowOpacity: 0.8,
@@ -58,5 +58,13 @@ export const GlobalStyles = StyleSheet.create({
       marginHorizontal: 70,
       width: 25,
       height: 25,
-   }
+      borderRadius: 20,
+      elevation: 2,
+      backgroundColor: '#fff',
+      shadowColor: '#333',
+      shadowRadius: 2,
+      textAlign: 'center',
+      fontFamily: 'roboto',
+      fontSize: 17
+   },
 });
