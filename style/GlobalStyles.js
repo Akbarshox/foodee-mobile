@@ -10,7 +10,7 @@ export const GlobalStyles = StyleSheet.create({
       minWidth: 170,
       maxWidth: 223,
       height: 240,
-      maxHeight:304,
+      maxHeight: 304,
       backgroundColor: '#fff',
       borderRadius: 15,
       marginVertical: 10
@@ -65,6 +65,6 @@ export const GlobalStyles = StyleSheet.create({
       shadowRadius: 2,
       textAlign: 'center',
       fontFamily: 'roboto',
-      fontSize: 17
+      fontSize: 17,
    },
 });
